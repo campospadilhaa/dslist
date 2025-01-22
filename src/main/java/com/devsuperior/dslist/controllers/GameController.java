@@ -14,7 +14,7 @@ import com.devsuperior.dslist.services.GameService;
 
 @RestController
 @RequestMapping(value = "/games")
-public class GamerController {
+public class GameController {
 
 	@Autowired
 	private GameService gameService;
