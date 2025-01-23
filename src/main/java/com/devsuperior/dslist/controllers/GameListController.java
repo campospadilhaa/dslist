@@ -19,6 +19,8 @@ public class GameListController {
 
 	@Autowired
 	private GameService gameService;
+
+	@Autowired
 	private GameListService gameListService;
 
 	@GetMapping

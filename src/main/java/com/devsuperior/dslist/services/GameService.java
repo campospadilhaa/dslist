@@ -19,18 +19,6 @@ public class GameService {
 	private GameRepository gameRepository;
 
 	@Transactional(readOnly = true)
-	public GameDTO loadById(Long id){
-
-		// retorna o Game através do id informado
-		Game game = gameRepository.findById(id).get();
-
-		// convertendo a Game para GameDTO para exibição
-		GameDTO gameDTO = new GameDTO(game);
-
-		return gameDTO;
-	}
-
-	@Transactional(readOnly = true)
 	public List<GameMinDTO> findAll(){
 
 		// retorna todos os Game's
@@ -40,6 +28,18 @@ public class GameService {
 		List<GameMinDTO> listaGameMinDTO = listaGame.stream().map(game -> new GameMinDTO(game)).toList();
 
 		return listaGameMinDTO;
+	}
+
+	@Transactional(readOnly = true)
+	public GameDTO loadById(Long id){
+
+		// retorna o Game através do id informado
+		Game game = gameRepository.findById(id).get();
+
+		// convertendo a Game para GameDTO para exibição
+		GameDTO gameDTO = new GameDTO(game);
+
+		return gameDTO;
 	}
 
 	@Transactional(readOnly = true)
