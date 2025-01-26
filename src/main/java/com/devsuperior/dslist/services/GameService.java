@@ -45,7 +45,7 @@ public class GameService {
 	@Transactional(readOnly = true)
 	public List<GameMinDTO> findByList(Long listId){
 
-		// retorna os Game's da lista informada
+		// retorna os Game's do tipo de lista informada
 		List<GameMinProjection> listaGameMinProjection = gameRepository.searchByList(listId);
 
 		// convertendo a listaGame para listaGameMinDTO para exibição resumida
